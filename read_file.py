@@ -8,7 +8,8 @@ def read_file(filename):
         NUM_BOOKS       = line[0]
         NUM_LIBRARIES   = line[1]
         NUM_DAYS        = line[2]
-        BOOK_SCORES     = lines[1].split()
+        BOOK_SCORES     = [int(i) for i in lines[1].split()]
+        BOOKS           = [Book(i, BOOK_SCORES[i]) for i in range(len(BOOK_SCORES))]
         libraries       = {}
 
         lib_num = 0
@@ -16,7 +17,7 @@ def read_file(filename):
             line                = lines[i].split()
             stime               = line[1]
             bpd                 = line[2]
-            books               = lines[i+1].split()
+            books               = [BOOKS[i] for i in lines[i+1].split()]
 
             libraries[lib_num]  = Library(lib_num, stime, bpd, books)
             lib_num += 1
