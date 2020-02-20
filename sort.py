@@ -36,11 +36,11 @@ def calculate_scores(libraries, num_days,final_list):
 
     final_list.append(sorted_weights[0])
     
-    del libraries[weights[0][0]]
+    del libraries[sorted_weights[0][0]]
     return libraries, time, final_list
 
 def write_output(final_list):
-    with open("output/test.txt", "w") as outfile:
+    with open("output/b_submission.txt", "w") as outfile:
         outfile.write(str(len(final_list)))
         outfile.write("\n")
         for library in final_list:
