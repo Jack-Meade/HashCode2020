@@ -1,6 +1,6 @@
 class Library(object):
     def __init__(self, libraryID, timeUntilScan, booksPerDay, books):
-        self.libraryID = 0
+        self.libraryID = libraryID
         self.timeUntilScan = timeUntilScan
         self.booksPerDay = booksPerDay
         self.books = books
