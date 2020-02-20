@@ -3,7 +3,7 @@ from math import floor
 
 def calculate_library_weight():
     meta_data = read_file("input/a_example.txt")
-    weights = {}
+    weights = []
     for lib in meta_data[4].values():
         weight = 0
         NUM_DAYS = meta_data[2]
@@ -13,9 +13,10 @@ def calculate_library_weight():
         while i <= (time * int(lib.booksPerDay) and i < len(sorted_books)):
             weight += sorted_books[i].score
             i += 1
-            
-        weights[lib.libraryID] = weight
-    print(weights)
+
+        weights.append((lib.libraryID, weight))
+
+    print(sorted(weights))
 
 
 if __name__ == "__main__":
