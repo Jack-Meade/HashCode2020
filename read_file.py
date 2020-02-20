@@ -17,7 +17,7 @@ def read_file(filename):
             line                = lines[i].split()
             stime               = line[1]
             bpd                 = line[2]
-            books               = [BOOKS[i] for i in lines[i+1].split()]
+            books               = [BOOKS[int(i)] for i in lines[i+1].split()]
 
             libraries[lib_num]  = Library(lib_num, stime, bpd, books)
             lib_num += 1
