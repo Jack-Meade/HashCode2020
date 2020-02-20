@@ -3,9 +3,11 @@ from math import floor
 # global final_list
 # final_list = []
 
+files = ["b_read_on.txt","c_incunabula.txt","d_tough_choices.txt","e_so_many_books.txt"]
+
 def calculate_library_weight_main():
     final_list = []
-    meta_data = read_file("input/b_read_on.txt")
+    meta_data = read_file("input/f_libraries_of_the_world.txt")
     scanned_books = {}
     libraries = meta_data[4]
     num_days = meta_data[2]
@@ -40,7 +42,7 @@ def calculate_scores(libraries, num_days,final_list):
     return libraries, time, final_list
 
 def write_output(final_list):
-    with open("output/b_submission.txt", "w") as outfile:
+    with open("output/f_submission.txt", "w") as outfile:
         outfile.write(str(len(final_list)))
         outfile.write("\n")
         for library in final_list:
