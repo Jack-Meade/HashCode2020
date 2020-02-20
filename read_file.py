@@ -9,6 +9,7 @@ def read_file(filename):
         NUM_LIBRARIES   = line[1]
         NUM_DAYS        = line[2]
         BOOK_SCORES     = lines[1].split()
+        libraries       = {}
 
         lib_num = 0
         for i in range(2, len(lines), 2):
