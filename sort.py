@@ -48,7 +48,7 @@ def write_output(final_list):
         for library in final_list:
             outfile.write("{} {}".format(library[0], len(library[2])))
             outfile.write("\n")
-            booklist = " ".join(str(item) for item in library[2])
+            booklist = " ".join(map(str,library[2]))
             outfile.write(booklist)
             outfile.write("\n")
 
