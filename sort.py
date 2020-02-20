@@ -42,13 +42,14 @@ def calculate_scores(libraries, num_days,final_list):
 def write_output(final_list):
     with open("output/test.txt", "w") as outfile:
         outfile.write(str(len(final_list)))
+        outfile.write("\n")
         for library in final_list:
-            try:
-                outfile.write("{} {}".format(library[0]), len(library[2]))
-                outfile.write(" ".join(library[2]))
-            except IndexError:
-                pass
-            
+            outfile.write("{} {}".format(library[0], len(library[2])))
+            outfile.write("\n")
+            booklist = " ".join(str(item) for item in library[2])
+            outfile.write(booklist)
+            outfile.write("\n")
+
 if __name__ == "__main__":
     final_list = calculate_library_weight_main()
     write_output(final_list)
