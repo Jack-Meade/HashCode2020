@@ -25,7 +25,8 @@ def read_file(filename):
     return NUM_BOOKS, NUM_LIBRARIES, NUM_DAYS, BOOK_SCORES, libraries
 
 if __name__ == '__main__':
-    NUM_BOOKS, NUM_LIBRARIES, NUM_DAYS, BOOK_SCORES, libraries = read_file("input/a_example.txt")
+    # NUM_BOOKS, NUM_LIBRARIES, NUM_DAYS, BOOK_SCORES, libraries = read_file("input/a_example.txt")
+    NUM_BOOKS, NUM_LIBRARIES, NUM_DAYS, BOOK_SCORES, libraries = read_file("input/b_read_on.txt")
     print("NUM_BOOKS:    ", NUM_BOOKS)
     print("NUM_LIBRARIES:", NUM_LIBRARIES)
     print("NUM_DAYS:     ", NUM_DAYS)
