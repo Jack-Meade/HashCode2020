@@ -2,12 +2,6 @@ from Book import Book
 from Library import Library
 
 def read_file(filename):
-    NUM_BOOKS       = 0
-    NUM_LIBRARIES   = 0
-    NUM_DAYS        = 0
-    BOOK_SCORES     = []
-    libraries       = {}
-
     with open(filename, "r") as file:
         lines           = file.readlines()
         line            = lines[0].split()
@@ -19,12 +13,12 @@ def read_file(filename):
         lib_num = 0
         for i in range(2, len(lines), 2):
             line                = lines[i].split()
-            numbooks            = line[0]
             stime               = line[1]
             bpd                 = line[2]
             books               = lines[i+1].split()
-            
+
             libraries[lib_num]  = Library(lib_num, stime, bpd, books)
+            lib_num += 1
 
     return NUM_BOOKS, NUM_LIBRARIES, NUM_DAYS, BOOK_SCORES, libraries
 
