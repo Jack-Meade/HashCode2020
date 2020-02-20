@@ -1,4 +1,10 @@
 class Book(object):
     def __init__(self, bookID, score):
-        bookID = bookID
-        score = score
+        self.bookID = bookID
+        self.score = score
+
+    def __str__(self):
+        return "BookID:%s BookScore:%s"%(self.bookID, self.score)
+        
+    def __repr__(self):
+        return "BookID:%s BookScore:%s"%(self.bookID, self.score)
